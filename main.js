@@ -4,6 +4,8 @@ const barsIcon = document.querySelector('.fa-bars')
 const navLinks = document.querySelectorAll('li')
 const ulList = document.querySelector('ul')
 
+
+// this function is responsible for changing the menu icons 
 const showHide = () => {
 	if (timesIcon.classList.contains('hide')) {
 		timesIcon.classList.remove('hide')
@@ -16,4 +18,12 @@ const showHide = () => {
 	}
 }
 
+const hideAfterClick = () => {
+    ulList.classList.add('hide')
+    barsIcon.classList.remove('hide')
+    timesIcon.classList.add('hide')
+
+}
+
 btnMenu.addEventListener('click', showHide)
+navLinks.forEach(nav => nav.addEventListener('click', hideAfterClick))
